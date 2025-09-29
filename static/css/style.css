@@ -1,0 +1,70 @@
+:root{
+  --bg:#0b1020;
+  --card:#121a33;
+  --muted:#8aa0c6;
+  --text:#e8efff;
+  --primary:#3b82f6;
+  --success:#22c55e;
+  --danger:#ef4444;
+  --border:rgba(255,255,255,.08);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font:16px/1.5 system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--text);
+  background:radial-gradient(1200px 600px at 20% -10%, #1b2551 0, #0b1020 60%) fixed;
+}
+
+.nav{
+  position:sticky; top:0; z-index:10;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 20px;
+  background:rgba(11,16,32,.65); backdrop-filter: blur(8px);
+  border-bottom:1px solid var(--border);
+}
+.brand{font-weight:700}
+.actions{display:flex; gap:16px}
+.nav-link{color:var(--muted); text-decoration:none}
+.nav-link:hover{color:#fff}
+
+.container{
+  max-width:1000px; margin:24px auto; padding:0 16px;
+  display:grid; gap:24px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.row.gap{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+.file{padding:8px 10px; background:#0f1732; border:1px dashed var(--border); color:var(--muted); border-radius:12px}
+
+.btn{
+  padding:10px 14px; border-radius:12px;
+  background:#26335a; color:#fff; border:1px solid var(--border);
+  cursor:pointer; transition:transform .05s ease, filter .2s ease;
+}
+.btn:hover{filter:brightness(1.1)}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.6; cursor:not-allowed}
+.btn.primary{background:linear-gradient(135deg,#2563eb,#3b82f6)}
+.btn.success{background:linear-gradient(135deg,#16a34a,#22c55e)}
+.btn.danger{background:linear-gradient(135deg,#dc2626,#ef4444)}
+
+.grid.one{display:grid; grid-template-columns:1fr; gap:12px}
+.result{display:flex; gap:12px; align-items:center}
+.thumb{width:160px; height:120px; object-fit:cover; border-radius:12px; border:1px solid var(--border)}
+
+.stage{position:relative; width:100%; aspect-ratio:4/3; background:#0f1732; border-radius:18px; overflow:hidden; border:1px solid var(--border)}
+.stage > video, .stage > canvas{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.controls{margin-top:12px; display:flex; gap:8px; align-items:center}
+
+.muted{color:var(--muted)}
+.footer{padding:20px; text-align:center; color:var(--muted)}

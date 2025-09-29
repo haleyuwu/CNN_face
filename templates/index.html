@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Faxe — Face Recognition</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">🙋‍♀️ Faxe</div>
+    <nav class="actions">
+      <a href="#upload" class="nav-link">Upload ảnh</a>
+      <a href="#webcam" class="nav-link">Webcam</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="upload" class="card">
+      <h2>📤 Nhận diện từ 1 ảnh</h2>
+      <form id="upload-form" class="row gap">
+        <input id="image-input" class="file" type="file" name="image" accept="image/*" />
+        <button id="btn-upload" type="submit" class="btn primary">Nhận diện</button>
+      </form>
+      <div id="upload-status" class="muted"></div>
+      <div id="gallery" class="grid one"></div>
+    </section>
+
+    <section id="webcam" class="card">
+      <h2>📸 Webcam realtime</h2>
+      <div class="stage">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="overlay"></canvas>
+      </div>
+      <div class="controls">
+        <button id="btn-start" class="btn success">Bật webcam</button>
+        <button id="btn-stop" class="btn danger">Tắt webcam</button>
+        <span id="fps" class="muted"></span>
+      </div>
+      <p class="muted">“Tắt webcam” sẽ dừng hẳn request & vẽ khung.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Made for class — simple & clean.</span>
+  </footer>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
